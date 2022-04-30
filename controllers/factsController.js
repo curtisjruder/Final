@@ -10,9 +10,9 @@ const addFact = async (req, res) => {
     if(!state) state = await StateFact.create({"stateCode" : req.stateCode, "funfacts" : []});
     
     state.funfacts = state.funfacts.concat(factsInput);
-    await state.save();
+    const result = await state.save();
     
-    return res.json(state);
+    return res.json(result);
 }
 
 const editFact = async (req, res) => {
@@ -28,9 +28,9 @@ const editFact = async (req, res) => {
     if(index < 1 || index > state.funfacts.length) return res.json({"message" : "No Fun Fact found at that index for " + req.stateName})
 
     state.funfacts[index-1] = factInput;
-    await state.save();  
 
-    return res.json(state);
+    const result = await state.save();  
+    res.json(result);
 }
 
 const deleteFact = async (req, res) => {
@@ -43,24 +43,23 @@ const deleteFact = async (req, res) => {
     if(index < 1 || index > state.funfacts.length) return res.json({"message" : "No Fun Fact found at that index for " + req.stateName})
 
     state.funfacts.splice(index-1, 1);
-    await state.save();  
 
-    return res.json(state);
+    const result = await state.save();  
+    res.json(result);
 }
 
 const getFacts = async () => {
     return StateFact.find().exec();
 }
 
-const getFact = async (code) =>{
-    return StateFact.findOne({stateCode : code}).exec()
-}
+// const getFact = async (code) =>{
+//     return StateFact.findOne({stateCode : code}).exec();
+// }
 
 
 module.exports = {
     addFact,
     editFact,
     deleteFact,
-    getFacts,
-    getFact
+    getFacts
 }
