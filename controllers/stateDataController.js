@@ -30,6 +30,12 @@ const getStates = async (req, res) => {
 const getState = async (req, res) => {
     await configFacts()
     let x = data.states.find(itm => {return itm.code === req.stateCode})
+    return res.json(x)
+}
+
+const getFunFact = async (req, res) => {
+    await configFacts()
+    let x = data.states.find(itm => {return itm.code === req.stateCode})
     if(!x.funfacts || x.funfacts.length === 0) return res.json({"message" : "No Fun Facts found for " + req.stateName})
     
     let i = Math.floor(Math.random() * x.funfacts.length);
@@ -75,5 +81,6 @@ module.exports = {
     getAdmission,
     getPopulation,
     getNickName,
-    getCapital
+    getCapital,
+    getFunFact
 }
