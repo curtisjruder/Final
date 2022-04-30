@@ -1,37 +1,37 @@
 [
-  {"KS":
+  "KS":
 	[
-		{"largest_city": "Wichita"},
-		{"state_motto": "To the stars through difficulties"},
-		{"song": "Home on the Range"},
-		{"flower": "Sunflower"}
-	]},
-  {"MO":
+		"largest_city Wichita",
+		"state_motto To the stars through difficulties",
+		"song Home on the Range",
+		"flower Sunflower"
+	],
+  "MO":
 	[
-		{"largest_city": "Kansas City"},
-		{"state_motto": "The welfare of the people shall be the supreme law"},
-		{"song": "Missouri Waltz"},
-		{"flower": "Hawthorn"}
-	]},
-  {"OK":
+		"largest_city Kansas City",
+		"state_motto The welfare of the people shall be the supreme law",
+		"song Missouri Waltz",
+		"flower Hawthorn"
+	],
+  "OK":
 	[
-		{"largest_city": "Oklahoma City"},
-		{"state_motto": "In God we trust"},
-		{"song": "Oklahoma"},
-		{"flower": "Mistletoe"}
-	]},
-  {"NE":
+		"largest_city Oklahoma City",
+		"state_motto In God we trust",
+		"song Oklahoma",
+		"flower Mistletoe"
+	],
+  "NE":
 	[
-		{"largest_city": "Omaha"},
-		{"state_motto": "Equality before the law"},
-		{"song": "Beautiful Nebraska"},
-		{"flower": "Goldenrod"}
-	]},
-  {"CO":
+		"largest_city Omaha",
+		"state_motto Equality before the law",
+		"song Beautiful Nebraska",
+		"flower Goldenrod"
+	],
+  "CO":
 	[
-		{"largest_city": "Denver"},
-		{"state_motto": "Nothing without providence or deity"},
-		{"song": "Where the Columbines Grow"},
-		{"flower": "Rocky Mountain Columbine"}
-	]}
+		"largest_city Denver",
+		"state_motto Nothing without providence or deity",
+		"song Where the Columbines Grow",
+		"flower Rocky Mountain Columbine"
+	]
 ]

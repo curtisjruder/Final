@@ -7,6 +7,7 @@ const verifyState = (req, res, next) => {
     let code = req?.params?.state    
     if(!code) return next(); // Exit if it isn't provided
     
+    code = code.toUpperCase();
     // Grab the specific state of interest
     state = data.states.find(itm => { return itm.code === code});
 
@@ -14,7 +15,7 @@ const verifyState = (req, res, next) => {
     if(!state) return res.json({"message" : "Invalid state abbreviation parameter"});
 
     // Set the value and continue along
-    req.stateCode = code.toUpperCase();
+    req.stateCode = code;
     req.stateName = state.state;
     next();
 }

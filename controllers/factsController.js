@@ -4,7 +4,9 @@ const addFact = async (req, res) => {
     const factsInput = req?.body?.funfacts;
     if(!factsInput) return res.json({"message" : "State fun facts value required"});
   
-    const state = await StateFact.findOne({stateCode: req.stateCode}).exec();
+    if(!Array.isArray(factsInput)) return res.json({"message": "State fun facts value must be an array"})
+
+    let state = await StateFact.findOne({stateCode: req.stateCode}).exec();
     if(!state) state = await StateFact.create({"stateCode" : req.stateCode, "funfacts" : []});
     
     state.funfacts = state.funfacts.concat(factsInput);
